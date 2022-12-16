@@ -1,6 +1,8 @@
 import "./App.css";
 import pokemonDB from "./data/pokemon.db.json";
 import { Component } from "react";
+import CardList from "./components/card-list/card-list.component";
+import SearchBox from "./components/search-box/search-box.component";
 
 class App extends Component {
 	constructor() {
@@ -39,19 +41,12 @@ class App extends Component {
 
 		return (
 			<div className="App">
-				<input
-					className="search-box"
-					type="search"
-					placeholder="search pokémon"
-					onChange={onSearchChange}
-				></input>
-				{filteredPokemon.map((pokemon) => {
-					return (
-						<div key={pokemon.id}>
-							<h1>{pokemon.name}</h1>
-						</div>
-					);
-				})}
+				<SearchBox
+					placeholder="search pokemon"
+					className="pokemon-search-box"
+					onChangeHandler={onSearchChange}
+				/>
+				<CardList pokemonArray={filteredPokemon} />
 			</div>
 		);
 	}
