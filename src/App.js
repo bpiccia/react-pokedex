@@ -3,6 +3,7 @@ import pokemonDB from "./data/pokemon.db.json";
 import { Component } from "react";
 import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
+import logo from "./images/pokedex-3d-logo.png";
 
 class App extends Component {
 	constructor() {
@@ -41,12 +42,17 @@ class App extends Component {
 
 		return (
 			<div className="App">
-				<SearchBox
-					placeholder="search pokemon"
-					className="pokemon-search-box"
-					onChangeHandler={onSearchChange}
-				/>
-				<CardList pokemonArray={filteredPokemon} />
+				<img className="app-title" alt="pokedex-logo" src={logo}></img>
+				<div className="search-div">
+					<SearchBox
+						placeholder="search pokemon"
+						className="pokemon-search-box"
+						onChangeHandler={onSearchChange}
+					/>
+				</div>
+				<div className="card-div">
+					<CardList pokemonArray={filteredPokemon} />
+				</div>
 			</div>
 		);
 	}

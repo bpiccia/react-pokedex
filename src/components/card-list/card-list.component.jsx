@@ -1,13 +1,15 @@
 import { Component } from "react";
+import Card from "../card/card.component";
+import "./card-list.styles.css";
 
 class CardList extends Component {
 	render() {
 		const { pokemonArray } = this.props;
 		return (
-			<div>
-				{pokemonArray.map((pokemon) => (
-					<h1 key={pokemon.id}>{pokemon.name}</h1>
-				))}
+			<div className="card-list">
+				{pokemonArray.map((pokemon) => {
+					return <Card pokemon={pokemon} />;
+				})}
 			</div>
 		);
 	}

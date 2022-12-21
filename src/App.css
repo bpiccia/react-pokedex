@@ -9,3 +9,13 @@ body {
 	background: linear-gradient(to left, rgb(65, 0, 0) 0%, rgb(221, 16, 33) 100%);
 	text-align: center;
 }
+
+.app img {
+	float: left;
+}
+
+.app-title {
+	margin-top: 25px;
+	margin-bottom: 10px;
+	height: 100px;
+}
